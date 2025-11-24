@@ -15,11 +15,12 @@ EXP-TDD-REST-EDGECases-2025
 | Versão | Data       | Responsável   | Descrição                              |
 | ------ | ---------- | ------------- | -------------------------------------- |
 | v1.0   | 23/11/2025 | Lucca Oliveira Vasconcelos de Faria | Criação do documento |
+| v1.1   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Atualização do GQM |
 
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 23/11/2025
+- Última atualização: 24/11/2025
 
 ## 1.5 Autores
 
@@ -100,23 +101,49 @@ Analisar o uso de Test-Driven Development com o propósito de avaliar seu impact
 
 ## 3.2 Objetivos Específicos
 
-- O1: Medir quantos casos de borda são corretamente tratados com e sem TDD.
-- O2: Medir o número de erros descobertos posteriormente relacionados a bordas.
-- O3: Comparar a cobertura de testes focada em cenários extremos.
-- O4: Medir o esforço de retrabalho para correção de falhas de borda.
+- O1: Avaliar a cobertura de casos de borda obtida durante o desenvolvimento.
+- O2: Avaliar a ocorrência de falhas relacionadas a casos de borda.
+- O3: Avaliar o esforço de retrabalho após detecção de problemas.
+- O4: Avaliar a precisão e confiabilidade das validações em cenários-limite.
 
-## 3.3 Questões de Pesquisa / de Negócio
+## 3.3 Tabela GQM
 
-- Q1: TDD resulta em maior cobertura de casos de borda?
-- Q2: TDD reduz o número de falhas de validação em cenários extremos?
-- Q3: TDD reduz o retrabalho relacionado a correções desses casos?
-- Q4: TDD aumenta a precisão das regras implementadas nos limites?
+| **Objetivo**                                      | **Perguntas (Q)**                                                                    | **Métricas (M)**                                                             |
+| ------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| **O1 - Cobertura de Casos de Borda**              | **Q1.1:** A implementação com TDD cobre mais casos de borda definidos?               | M1. Cobertura de Casos de Borda (%)<br>M2. Número de Testes de Borda         |
+|                                                   | **Q1.2:** A implementação com TDD testa mais variações dentro de limites?            | M3. Variedade de Partições de Limite<br>M4. Densidade de Testes (%)          |
+|                                                   | **Q1.3:** A implementação com TDD apresenta maior cobertura de código?               | M5. Cobertura de Código (%)<br>M6. Linhas de Código Exercitadas              |
+| **O2 - Falhas em Casos de Borda**                 | **Q2.1:** A abordagem TDD reduz a quantidade de falhas em cenários-limite?           | M7. Falhas de Borda Detectadas<br>M8. Taxa de Falhas por Execução            |
+|                                                   | **Q2.2:** As falhas de borda aparecem mais tarde no ciclo quando TDD não é usado?    | M9. Tempo até Detecção de Falhas<br>M10. Número de Falhas Pós-Entrega        |
+|                                                   | **Q2.3:** A severidade média das falhas é menor com TDD?                             | M11. Severidade Média das Falhas<br>M12. Proporção de Falhas Críticas        |
+| **O3 - Esforço de Retrabalho**                    | **Q3.1:** O TDD reduz o tempo gasto corrigindo falhas de borda?                      | M13. Tempo de Retrabalho (horas)<br>M14. Número de Commits de Correção       |
+|                                                   | **Q3.2:** O TDD reduz o número total de correções necessárias?                       | M7. Falhas de Borda Detectadas<br>M14. Número de Commits de Correção         |
+|                                                   | **Q3.3:** O TDD reduz o custo relativo por falha corrigida?                          | M13. Tempo de Retrabalho (horas)<br>M15. Custo por Falha Corrigida           |
+| **O4 - Precisão e Confiabilidade das Validações** | **Q4.1:** As validações produzem respostas corretas com maior frequência usando TDD? | M16. Taxa de Respostas Corretas (%)<br>M17. Taxa de Falsos Negativos         |
+|                                                   | **Q4.2:** A implementação com TDD reduz aceitação indevida de inputs inválidos?      | M18. Taxa de Falsos Positivos<br>M16. Taxa de Respostas Corretas (%)         |
+|                                                   | **Q4.3:** A implementação com TDD cumpre melhor os requisitos funcionais de borda?   | M19. Conformidade com Requisitos (%)<br>M3. Variedade de Partições de Limite |
 
-## 3.4 Métricas Associadas
+## 3.4 Tabela de Métricas
 
-| Questão | Métrica                         | Definição                                                   | Unidade  | Fonte                        |
-| ------- | ------------------------------- | ----------------------------------------------------------- | -------- | ---------------------------- |
-| Q1      | **Cobertura de Casos de Borda** | Proporção de casos de borda definidos vs testados           | %        | Matriz de casos / testes     |
-| Q2      | **Falhas de Borda Detectadas**  | Quantidade de cenários extremos com comportamento incorreto | Contagem | Testes manuais/automatizados |
-| Q3      | **Tempo de Retrabalho**         | Horas gastas corrigindo falhas de borda                     | Horas    | Log de tempo                 |
-| Q4      | **Precisão das Validações**     | Taxa de respostas corretas em cenários limite               | % acerto | Resultados dos testes        |
+| **Métrica**                              | **Descrição**                                                  | **Unidade**     |
+| ---------------------------------------- | -------------------------------------------------------------- | --------------- |
+| **M1. Cobertura de Casos de Borda**      | Percentual de casos de borda planejados que foram testados.    | %               |
+| **M2. Número de Testes de Borda**        | Quantidade total de testes automatizados voltados para bordas. | Contagem        |
+| **M3. Variedade de Partições de Limite** | Número de partições de equivalência/límite distintas cobertas. | Contagem        |
+| **M4. Densidade de Testes**              | Proporção de testes de borda por linhas de código.             | Testes/KLOC     |
+| **M5. Cobertura de Código**              | Percentual de linhas executadas pelos testes.                  | %               |
+| **M6. Linhas de Código Exercitadas**     | Linhas efetivamente executadas pelos testes.                   | Linhas          |
+| **M7. Falhas de Borda Detectadas**       | Número total de falhas relacionadas a bordas.                  | Contagem        |
+| **M8. Taxa de Falhas por Execução**      | Falhas detectadas a cada ciclo de teste.                       | Falhas/Execução |
+| **M9. Tempo até Detecção de Falhas**     | Tempo entre implementação e descoberta da falha.               | Horas           |
+| **M10. Falhas Pós-Entrega**              | Falhas encontradas após finalização inicial.                   | Contagem        |
+| **M11. Severidade Média das Falhas**     | Média ponderada da severidade (ex: 1–5).                       | Escore          |
+| **M12. Proporção de Falhas Críticas**    | Percentual de falhas classificadas como críticas.              | %               |
+| **M13. Tempo de Retrabalho**             | Tempo gasto em correções.                                      | Horas           |
+| **M14. Commits de Correção**             | Quantidade de commits dedicados a correções.                   | Contagem        |
+| **M15. Custo por Falha Corrigida**       | Tempo total dividido pelo número de falhas corrigidas.         | Horas/Falha     |
+| **M16. Taxa de Respostas Corretas**      | Proporção de respostas corretas em cenários-limite.            | %               |
+| **M17. Taxa de Falsos Negativos**        | Casos inválidos aceitos como válidos.                          | %               |
+| **M18. Taxa de Falsos Positivos**        | Casos válidos rejeitados indevidamente.                        | %               |
+| **M19. Conformidade com Requisitos**     | Percentual de requisitos de borda cumpridos.                   | %               |
+
