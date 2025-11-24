@@ -16,6 +16,7 @@ EXP-TDD-REST-EDGECases-2025
 | ------ | ---------- | ------------- | -------------------------------------- |
 | v1.0   | 23/11/2025 | Lucca Oliveira Vasconcelos de Faria | Criação do documento |
 | v1.1   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Atualização do GQM |
+| v2.0   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 4 - 6 |
 
 ## 1.4 Datas
 
@@ -147,3 +148,153 @@ Analisar o uso de Test-Driven Development com o propósito de avaliar seu impact
 | **M18. Taxa de Falsos Positivos**        | Casos válidos rejeitados indevidamente.                        | %               |
 | **M19. Conformidade com Requisitos**     | Percentual de requisitos de borda cumpridos.                   | %               |
 
+# 4 Escopo e contexto do experimento
+
+## 4.1 Escopo Funcional / de Processo
+
+### Incluído no Experimento
+
+Implementação de uma API REST de Gestão de Limites de Transações Financeiras.
+
+**Endpoints:**
+
+- ```POST /usuarios```
+- ```GET /usuarios/{id}```
+- ```POST /transacoes```
+- ```GET /usuarios/{id}/limite```
+
+**Validações obrigatórias:**
+
+- Valor da transação > 0.
+- Valor ≤ limite diário restante.
+- Limite diário deve ser > 0 ao criar usuário.
+- Documento deve seguir formato válido (mínimo de caracteres).
+- Bloqueio quando o limite é excedido.
+
+**Processos avaliados:**
+
+- Implementação com e sem TDD dos mesmos requisitos.
+- Criação e execução de testes automatizados de borda.
+- Registro e análise de falhas.
+
+**Casos de borda explorados:**
+
+- Limite zerado.
+- Transações de valor mínimo e máximo.
+- Somatório de transações excedendo limite.
+- Inputs nulos, ausentes, negativos ou muito grandes.
+
+### Excluído do Experimento
+
+- Testes de carga, desempenho ou segurança.
+- Desenvolvimento de interface gráfica ou aplicativo cliente.
+- Envolvimento de equipes, clientes reais ou organizações externas.
+- Deploy em ambiente corporativo ou cloud paga.
+- Comparação entre múltiplos desenvolvedores (apenas um participante).
+- Investigação de práticas ágeis fora do TDD (Scrum, Kanban, BDD, CI/CD etc.).
+- Desenvolvimento de produto final ou comercial.
+
+## 4.2 Contexto do Estudo
+
+**Tipo de organização:** Atividade acadêmica individual, sem vínculo com empresa.
+
+**Tamanho:** Projeto pequeno, desenvolvido por 1 estudante.
+
+**Tipo de projeto:** Protótipo educacional de API REST.
+
+**Criticidade:** Baixa, sem uso comercial ou impacto externo.
+
+**Perfil do participante:** Estudante de Engenharia de Software com conhecimento básico/intermediário em programação e testes.
+
+**Ambiente técnico:**
+
+- Desenvolvimento local no computador pessoal.
+- Controle de versão via Git.
+- Execução e testes em ambiente local.
+- Duração aproximada: 4 a 8 semanas.
+
+## 4.3 Premissas
+
+- O estudante possui conhecimento inicial de TDD e testes unitários.
+- As ferramentas necessárias estão instaladas e funcionando.
+- O protótipo da API REST será simples o suficiente para ser implementado no tempo previsto.
+- Os casos de borda podem ser definidos claramente antes da execução do experimento.
+- O computador de desenvolvimento estará disponível durante o período do estudo.
+- Os limites financeiros serão representados numericamente em valor monetário (ex.: decimal).
+- Não haverá integração com sistemas reais de pagamento.
+- Não haverá mudanças radicais no escopo após o início.
+
+## 4.4 Restrições
+
+- **Recursos humanos:** Apenas um desenvolvedor disponível.
+- **Tempo:** Agenda acadêmica limitada.
+- **Orçamento:** Zero — ferramentas devem ser gratuitas.
+- **Ambiente:** Sem servidores dedicados ou infraestrutura corporativa.
+- **Dados:** Não será usado banco de dados real; preferencialmente dados simples ou memória local.
+- **Imparcialidade:** O participante é também o executor, o que pode gerar viés.
+
+## 4.5 Limitações Previstas
+
+- Os resultados podem não generalizar para equipes profissionais.
+- O desempenho pode refletir a habilidade individual do estudante.
+- A API REST será pequena, o que pode reduzir variação de falhas.
+- Os resultados podem não representar sistemas maiores ou críticos.
+- A comparação entre TDD e não-TDD pode ser limitada por falta de múltiplos participantes.
+
+# 5. Stakeholders e Impacto Esperado
+
+## 5.1 Stakeholders Principais
+
+- Estudante pesquisador (executor e analista).
+- Orientador acadêmico / professor.
+- Comunidade acadêmica (eventuais leitores do TCC).
+- Futuros estudantes/pesquisadores interessados em TDD.
+
+## 5.2 Interesses e Expectativas dos Stakeholders
+
+| Stakeholder           | Interesse / Expectativa                                          |
+| --------------------- | ---------------------------------------------------------------- |
+| Estudante             | Aprender, comparar e validar o impacto do TDD em casos de borda. |
+| Orientador            | Evidências claras, metodologia correta e resultados coerentes.   |
+| Comunidade acadêmica  | Contribuição para o entendimento prático do TDD.                 |
+| Futuros pesquisadores | Base para replicação, melhoria ou ampliação do estudo.           |
+
+## 5.3 Impactos Potenciais no Processo / Produto
+
+- A adoção do TDD pode aumentar o esforço inicial de desenvolvimento.
+- O processo pode estender prazos, especialmente na fase de testes.
+- Qualidade do protótipo pode melhorar em confiabilidade de validações.
+- Pode gerar documentação extra (testes como especificação viva).
+- Pode influenciar a percepção do estudante sobre práticas futuras.
+
+# 6. Riscos, Premissas e Critérios de Sucesso
+
+## 6.1 Riscos de Alto Nível
+
+- **Técnicos:** Ferramentas incompatíveis, falhas no ambiente local, dificuldades com frameworks de teste.
+- **Metodológicos:** Viés do participante na comparação entre métodos.
+- **Cronograma:** Atrasos por carga acadêmica.
+- **Escopo:** Protótipo mais complexo do que o previsto.
+- **Motivação:** Perda de engajamento ao longo do estudo.
+
+## 6.2 Critérios de Sucesso Globais (Go / No-Go)
+
+O experimento será considerado bem-sucedido se:
+
+- As métricas GQM forem coletadas integralmente.
+- As duas abordagens (TDD e não-TDD) forem concluídas no protótipo.
+- Existirem evidências mensuráveis que permitam comparação.
+- O relatório final possibilitar conclusões úteis, mesmo que negativas.
+
+Go: Se o planejamento, ferramentas e tempo estiverem garantidos.
+No-Go: Se o escopo ou ferramentas não puderem ser executados conforme planejado.
+
+## 6.3 Critérios de Parada Antecipada (Pré-execução)
+
+O experimento deve ser adiado ou cancelado caso:
+
+- Não haja computador funcional ou ambiente configurado.
+- O participante não consiga implementar o protótipo mínimo.
+- O cronograma acadêmico torne inviável a coleta de métricas.
+- Haja perda de dados críticos sem possibilidade de reconstrução.
+- Haja impedimento de saúde ou motivos maiores do participante.
