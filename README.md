@@ -17,11 +17,12 @@ EXP-TDD-REST-EDGECases-2025
 | v1.0   | 23/11/2025 | Lucca Oliveira Vasconcelos de Faria | Criação do documento |
 | v1.1   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Atualização do GQM |
 | v2.0   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 4 - 6 |
+| v3.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 7 - 9 |
 
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 24/11/2025
+- Última atualização: 26/11/2025
 
 ## 1.5 Autores
 
@@ -298,3 +299,207 @@ O experimento deve ser adiado ou cancelado caso:
 - O cronograma acadêmico torne inviável a coleta de métricas.
 - Haja perda de dados críticos sem possibilidade de reconstrução.
 - Haja impedimento de saúde ou motivos maiores do participante.
+
+# 7. Modelo Conceitual e Hipóteses
+
+## 7.1 Modelo Conceitual do Experimento
+
+O modelo conceitual do estudo assume que:
+
+- A técnica de desenvolvimento utilizada (TDD vs. desenvolvimento tradicional) influencia:
+  - a cobertura de testes e casos de borda,
+  - a quantidade e severidade das falhas,
+  - o esforço de retrabalho,
+  - a precisão das validações da API.
+
+**Pressupõe-se que:**
+
+Quando o TDD é aplicado, os testes orientam o código desde o início, fazendo com que mais casos de borda sejam antecipados e corretamente tratados, reduzindo falhas e retrabalho.
+
+**Enquanto:**
+
+No desenvolvimento tradicional, o código é implementado antes e os testes depois, aumentando a chance de problemas passarem despercebidos e surgirem mais tarde.
+
+Assim, o fator processo de desenvolvimento afeta diretamente as variáveis de qualidade e esforço.
+
+## 7.2 Hipóteses Formais (H0 e H1)
+
+**Hipóteses relacionadas ao Objetivo O1 – Cobertura de casos de borda**
+
+- H0-O1: Não há diferença significativa na cobertura de casos de borda entre TDD e não-TDD.
+- H1-O1: A cobertura de casos de borda é maior utilizando TDD.
+
+**Hipóteses relacionadas ao Objetivo O2 – Falhas em cenários-limite**
+
+- H0-O2: A quantidade e severidade das falhas em casos de borda não diferem entre TDD e não-TDD.
+- H1-O2: O TDD reduz a quantidade e severidade das falhas em casos de borda.
+
+**Hipóteses relacionadas ao Objetivo O3 – Esforço de retrabalho**
+
+- H0-O3: O esforço de retrabalho não difere entre TDD e não-TDD.
+- H1-O3: O esforço de retrabalho é menor com TDD.
+
+**Hipóteses relacionadas ao Objetivo O4 – Precisão das validações**
+
+- H0-O4: A precisão das validações em limites financeiros não difere entre TDD e não-TDD.
+- H1-O4: A precisão das validações é maior com TDD.
+
+## 7.3 Nível de Significância e Considerações de Poder
+
+**Nível de significância adotado:**
+- α = 0,05
+
+**Poder estatístico esperado:**
+
+Como o experimento possui apenas um participante e um único artefato sendo comparado, o poder estatístico será:
+
+- baixo para inferências populacionais
+- adequado somente para estudo exploratório
+- válido para observação e análise descritiva, não inferencial
+
+**Portanto:**
+
+Os resultados não permitirão generalizações estatísticas, mas gerarão evidências práticas e qualitativas úteis.
+
+# 8. Variáveis, Fatores, Tratamentos e Objetos de Estudo
+
+## 8.1 Objetos de Estudo
+
+Os objetos analisados no experimento serão:
+
+- Código-fonte da API REST
+- Casos de teste automatizados
+- Requisitos de validação de limite financeiro
+- Registros de falhas
+- Commits de correção
+- Execuções de testes
+- Resultados das respostas da API
+
+## 8.2 Sujeitos / Participantes
+
+**Participante único:**
+
+- Estudante de Engenharia de Software
+- Experiência básica/intermediária em desenvolvimento
+- Conhecimento introdutório de TDD
+- Responsável por implementar ambas as abordagens
+
+## 8.3 Variáveis Independentes (Fatores) e Níveis
+
+**Fator principal:**
+
+F1 – Abordagem de desenvolvimento
+
+- Nível A: TDD
+- Nível B: Desenvolvimento Tradicional (sem TDD)
+
+## 8.4 Tratamentos (Condições Experimentais)
+
+| Tratamento                           | Descrição                                                                                |
+| ------------------------------------ | ---------------------------------------------------------------------------------------- |
+| **T1 – TDD aplicado**                | Implementação da API seguindo ciclo Red-Green-Refactor, testes escritos antes do código. |
+| **T2 – Desenvolvimento tradicional** | Implementação da API sem TDD, com testes escritos apenas após o código.                  |
+
+## 8.5 Variáveis Dependentes (Respostas)
+
+As variáveis dependentes são medidas associadas aos resultados:
+
+- Cobertura de casos de borda
+- Cobertura de código
+- Número de falhas
+- Severidade das falhas
+- Tempo de retrabalho
+- Commits de correção
+- Taxa de respostas corretas
+- Taxa de falsos positivos
+- Taxa de falsos negativos
+- Conformidade com requisitos
+
+## 8.6 Variáveis de Controle / Bloqueio
+
+- Mesmo desenvolvedor
+- Mesmo conjunto de requisitos
+- Mesma API alvo
+- Mesmo hardware e ambiente
+- Mesmo tempo total máximo
+- Mesmo framework de testes
+- Mesmo banco de dados simples
+
+## 8.7 Variáveis de Confusão Conhecidas
+
+- Fadiga do participante
+- Aprendizado entre uma abordagem e outra
+- Motivação momentânea
+- Preferência pessoal por método
+- Ordem de implementação
+
+Para minimizar impacto, a ordem dos tratamentos será invertida em endpoints parciais, reduzindo viés de aprendizado.
+
+## 8.8 Tabela — Variáveis e Descrições
+
+| Tipo         | Variável                     | Descrição                         |
+| ------------ | ---------------------------- | --------------------------------- |
+| Independente | Abordagem de desenvolvimento | Técnica aplicada (TDD vs não-TDD) |
+| Dependente   | Cobertura de casos de borda  | Percentual de bordas testadas     |
+| Dependente   | Falhas detectadas            | Número total de falhas            |
+| Dependente   | Severidade das falhas        | Criticidade média ponderada       |
+| Dependente   | Tempo de retrabalho          | Tempo gasto corrigindo            |
+| Dependente   | Commits de correção          | Quantidade de commits corretivos  |
+| Dependente   | Taxa de respostas corretas   | Proporção de respostas válidas    |
+| Dependente   | Falsos positivos             | Rejeições indevidas               |
+| Dependente   | Falsos negativos             | Aceitações indevidas              |
+| Dependente   | Conformidade com requisitos  | Percentual atendido               |
+| Controle     | Participante                 | Mantido constante                 |
+| Controle     | Requisitos                   | Iguais nos dois tratamentos       |
+| Confusão     | Aprendizado                  | Pode favorecer o segundo ciclo    |
+
+## 8.9 Tabela — Fatores, Tratamentos e Combinações
+
+| Fator                        | Tratamentos   | Combinações Aplicadas                                       |
+| ---------------------------- | ------------- | ----------------------------------------------------------- |
+| Abordagem de desenvolvimento | TDD / Não-TDD | API implementada com TDD e a mesma API implementada sem TDD |
+
+# 9. Desenho Experimental
+
+## 9.1 Tipo de Desenho
+
+Desenho intra-sujeito (within-subjects) completamente randomizado
+
+Justificativa:
+
+- Apenas um participante disponível
+- Permite comparar o mesmo sujeito em duas condições
+- Minimiza variabilidade entre desenvolvedores
+
+## 9.2 Randomização e Alocação
+
+**O que será randomizado:**
+
+Ordem de implementação de funcionalidades dentro da API
+
+**Método de randomização:**
+
+Ferramenta simples como random.org, planilha ou sorteio manual
+
+## 9.3 Balanceamento e Contrabalanço
+
+Estratégias adotadas:
+
+- O participante implementará metade dos endpoints primeiro com TDD e metade primeiro sem TDD
+- Os papéis serão invertidos na segunda rodada
+- Reduz efeitos de aprendizagem e familiaridade
+
+## 9.4 Número de Grupos e Sessões
+
+**Grupos:** 1 participante, dois tratamentos
+
+**Sessões:** 2 ciclos completos de implementação
+
+- Ciclo A — abordagem 1
+- Ciclo B — abordagem 2
+
+Justificativa:
+
+- Mantém comparabilidade
+- Reduz viés temporal
+- Permite coleta completa de métricas
