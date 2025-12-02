@@ -18,11 +18,12 @@ EXP-TDD-REST-EDGECases-2025
 | v1.1   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Atualização do GQM |
 | v2.0   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 4 - 6 |
 | v3.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 7 - 9 |
+| v4.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 10 - 12 |
 
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 26/11/2025
+- Última atualização: 01/12/2025
 
 ## 1.5 Autores
 
@@ -503,3 +504,300 @@ Justificativa:
 - Mantém comparabilidade
 - Reduz viés temporal
 - Permite coleta completa de métricas
+
+# 10. População, Sujeitos e Amostragem
+
+## 10.1 População-alvo
+
+A população real que o experimento pretende representar é:
+
+Desenvolvedores backend (nível júnior a pleno) que implementam APIs REST em ambientes de produto ou protótipo, especialmente aqueles que lidam com validações financeiras (limites de transação).
+
+Essa população inclui estudantes avançados de engenharia de software, estagiários e desenvolvedores em início de carreira que usam tecnologias como Java/Spring Boot, Node/Express ou similares.
+
+## 10.2 Critérios de inclusão de sujeitos
+
+Caso o estudo seja ampliado e veja a necessidade de adicionar participantes além do próprio pesquisador. Para ser elegível como participante, o sujeito deve atender a todos os requisitos abaixo:
+
+- Ser estudante de graduação em Engenharia de Software (ou desenvolvedor júnior/pleno) com interesse em participar do estudo;
+- Ter conhecimento básico de programação backend (capacidade de implementar endpoints REST);
+- Ter conhecimento básico de testes unitários (conhecer JUnit, pytest, jest ou similar) e controle de versão (Git);
+- Disponibilidade para dedicar o período necessário (ex.: 4–8 semanas) conforme cronograma do experimento;
+- Aceitar os termos do experimento e assinar/aceitar um termo de consentimento.
+
+## 10.3 Critérios de exclusão de sujeitos
+
+Não poderão participar:
+
+- Pessoas com conflito de interesse direto (por exemplo, co-orientadores que avaliarão o TCC formalmente em nota);
+- Indivíduos sem conhecimento mínimo de programação ou testes (por exemplo, sem experiência em Git ou sem noções de REST);
+- Pessoas que não possam se comprometer com o cronograma ou com a disponibilidade exigida;
+
+## 10.4 Tamanho da amostra planejado (por grupo)
+
+Opção primária (realista para TCC — execução individual)
+
+- Total: 1 participante (o aluno autor do TCC).
+- Justificativa: recursos e tempo limitados; desenho within-subject permite comparação direta entre TDD e não-TDD para o mesmo executor.
+
+Opção estendida (recomendado para replicação / trabalho futuro)
+
+- Total sugerido para maior validade: 12–24 participantes (cada um executando um subconjunto balanceado), dividido em:
+  - Grupo A (TDD primeiro) = 6–12
+  - Grupo B (Não-TDD primeiro) = 6–12
+- Justificativa: tamanho típico para estudos experimentais em engenharia de software que buscam maior poder (~0.6–0.8 dependendo do efeito esperado). Requer mais recursos e coordenação.
+
+## 10.5 Método de seleção / recrutamento
+
+Para o TCC (n=1): autor do TCC executa o experimento.
+
+Para replicação/estudo ampliado: amostragem de conveniência e convite em turmas/disciplina do curso de Engenharia de Software, listas de divulgação acadêmicas, e grupos de pesquisa. Usar formulário de inscrição (Google Forms) com triagem pelos critérios de inclusão. Se houver mais candidatos que vagas, selecionar por ordem de inscrição mantendo equilíbrio de experiência.
+
+## 10.6 Treinamento e preparação dos sujeitos
+
+Para nivelar conhecimento e reduzir viés por falta de habilidade:
+
+- Sessão de treinamento (presencial ou gravada — ≈4 horas):
+  - Introdução ao objetivo do experimento e à API de Gestão de Limites (endpoints, requisitos).
+  - Breve revisão prática de TDD (ex.: ciclo Red-Green-Refactor com JUnit).
+  - Guia rápido de uso das ferramentas: Git, execução de testes, geração de relatório JaCoCo, uso do template de time tracking.
+  - Demonstração de um pequeno exemplo (ex.: criação de um endpoint simples com TDD).
+
+Material preparatório (entregue antes):
+- Documento com requisitos funcionais e lista de casos de borda (especificação da API).
+- Guia passo-a-passo para configurar o ambiente (instalação JDK/Docker/IDE).
+- Template de planilha para registro de tempo e template de issues no GitHub.
+- Exemplos de testes unitários (boas práticas).
+- Avaliação rápida de readyness: checklist que o sujeito preenche confirmando que ambiente está pronto e que compreendeu TDD mínimo.
+
+# 11. Instrumentação e Protocolo Operacional
+
+## 11.1 Instrumentos de coleta
+
+Abaixo estão os instrumentos, sua função e formato esperado.
+
+| Instrumento                                       | Descrição / Papel                                                                                               |
+| ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Repositório Git (GitHub)**                      | Armazena código, commits, branches e issues; usado para extrair número de commits, timestamps e mensagens.      |
+| **JaCoCo (ou similar)**                           | Gera relatórios de cobertura de código (linhas/branches).                                                       |
+| **Planilha de Time Tracking (CSV/Google Sheets)** | Registro manual de horas por tarefa (implementação, testes, correção).                                          |
+| **GitHub Issues / arquivo de bugs**               | Registro das falhas encontradas (descrição, severidade, passo a passo, status).                                 |
+| **Script de execução automatizada de testes**     | Script shell/Gradle/Maven que executa toda suíte de testes e gera saída padronizada; facilita coleta repetível. |
+| **Google Forms / Questionário (pré e pós)**       | Questionário Likert para medir percepção de confiança, esforço percebido e observações qualitativas.            |
+| **Matriz de Casos de Teste (CSV/Markdown)**       | Lista de todos os casos de borda planejados, com status (testado/não testado/ok/erro).                          |
+| **Log de execução de testes (arquivo)**           | Saída dos runs de teste para auditoria (pass/fail, stacktrace).                                                 |
+| **Ferramenta cloc**                               | Conta linhas de código (SLOC) para normalizar métricas por KLOC.                                                |
+| **Planilha de métricas agregadas**                | Consolida métricas finais (falhas, cobertura, tempo, commits, taxas).                                           |
+
+## 11.2 Materiais de suporte (instruções, guias)
+
+Será fornecido o seguinte pacote de materiais:
+
+- Guia do Experimento (PDF/Markdown): descrição do objetivo, cronograma, papel do participante, regras e boas práticas.
+- Especificação da API (Markdown): endpoints, modelos de dados, regras de validação e lista de casos de borda obrigatórios.
+- Tutorial TDD (PDF + exemplos de código): passo a passo do ciclo Red-Green-Refactor com exemplos na stack escolhida (Java/Spring Boot).
+- Checklist de ambiente: verificação de ferramentas instaladas.
+- Template de issue/bug (Markdown): campos exigidos (passos para reproduzir, entrada, saída esperada, severidade).
+- Planilha de registro de tempo e métricas (Google Sheets): com guias de preenchimento.
+- Formulários (Google Forms): pré-experiência (perfil), pós-experiência (Likert + comentários).
+- Todos materiais estarão no repositório do experimento em uma pasta /docs.
+
+## 11.3 Procedimento Experimental (Protocolo — passo a passo)
+
+O protocolo abaixo descreve a operação completa, do preparo ao encerramento. Quem executar deve seguir fielmente e registrar desvios.
+
+### Fase 0 — Preparação
+
+- Configurar repositório Git com duas branches de trabalho (por exemplo tdd e tradicional) ou criar repositórios separados para cada tratamento.
+- Preparar ambiente local conforme checklist e garantir que o script de testes e geração de cobertura funcionem.
+- Preencher formulário pré-experiência (perfil).
+- Carregar materiais de suporte e matriz de casos de borda no repositório.
+
+### Fase 1 — Piloto 
+
+Executar piloto (um endpoint simples) para verificar procedimentos.
+
+### Fase 2 — Execução do Tratamento 1
+
+- Definir quais endpoints serão implementados no ciclo 1 (por exemplo, POST /usuarios e GET /usuarios/{id}).
+- Registrar hora inicial na planilha de time tracking.
+- Implementar os endpoints seguindo a abordagem designada (TDD ou não-TDD conforme plano).
+- TDD: escrever teste(s) de borda → executar (ver fail) → implementar código mínimo → executar testes → refatorar.
+- Não-TDD: implementar código → escrever e executar testes após implementação.
+- Para cada falha encontrada (durante testes locais ou execução posterior), abrir issue no GitHub com detalhe. Registrar tempo gasto em correções.
+- Ao finalizar os endpoints do ciclo, rodar a suíte completa e gerar relatório JaCoCo e logs de teste. Registrar hora final.
+
+### Fase 3 — Execução do Tratamento 2
+
+- Pausa breve (min 24 horas) para reduzir fadiga; limpar estado local (migrations/data).
+- Repetir passos 6–10 com o outro tratamento para os endpoints remanescentes (ou alternar ordem conforme contrabalanceamento).
+
+### Fase 4 — Consolidação
+
+- Consolidar métricas: extrair cobertura (JaCoCo), contar commits corretivos, somar horas de retrabalho, compilar lista de falhas.
+- Preencher matriz de casos de borda com status final (ok/erro) e relacionar a qual tratamento pertence cada implementação.
+- Aplicar questionário pós-experiência (Likert + comentários).
+
+### Fase 5 — Análise e Relatório
+
+- Calcular métricas definidas no GQM.
+- Produzir relatórios descritivos (tabelas, gráficos) e análise qualitativa das observações.
+- Documentar desvios do protocolo e lições aprendidas.
+
+## 11.4 Plano de Piloto
+
+- Objetivo do piloto: verificar validade do protocolo, funcionamento dos scripts de teste/relatório e se as instruções são claras.
+- Escopo do piloto: implementar apenas um endpoint (ex.: POST /usuarios) com 3–5 casos de borda (nome, limite zerado, limite negativo).
+- Participantes do piloto: o próprio autor (ou um colega voluntário, se disponível).
+- Duração do piloto: 1–2 dias.
+- Critérios de ajuste (com base no piloto):
+- Se scripts de teste/relatório falharem → ajustar e reexecutar piloto.
+- Se a especificação de casos de borda estiver ambígua → revisar e clarificar a lista.
+- Se o tempo estimado para cada endpoint for muito maior/menor → ajustar cronograma e, se necessário, reduzir número de endpoints do experimento principal.
+- Se o processo de registro de tempo for difícil → simplificar a planilha.
+
+# 12. Plano de Análise de Dados (pré-execução)
+
+## 12.1 Estratégia geral de análise (como responderá às questões)
+
+A análise será conduzida seguindo diretamente o modelo GQM definido anteriormente.
+Para cada questão de pesquisa, as métricas associadas serão utilizadas para produzir:
+
+1. Análises descritivas (tabelas, gráficos, médias, medianas, desvios-padrão, distribuições);
+2. Comparações entre tratamentos (TDD vs. Desenvolvimento Tradicional);
+3. Testes estatísticos apropriados para verificar hipóteses formais (H0/H1);
+4. Triangulação com dados qualitativos (questionários e observações registradas em logs/commits).
+
+A estratégia geral é a seguinte:
+
+### Q1 – Efetividade na cobertura de testes
+
+- Usar métricas de cobertura de linha e de ramo (JaCoCo).
+- Comparar o percentual obtido entre os tratamentos.
+- Se mais de um endpoint for implementado, calcular média por endpoint e por tratamento.
+- Responder a Q1 verificando se TDD produz maior cobertura inicial e maior aderência aos casos de borda.
+
+### Q2 – Qualidade do software (defeitos introduzidos e retrabalho)
+
+- Contar falhas registradas no GitHub, falhas pós-implementação e falhas detectadas nos casos de borda.
+- Analisar a taxa de defeitos por KLOC.
+- Comparar o retrabalho (tempo e commits corretivos) entre tratamentos.
+- Concluir sobre a redução (ou não) de defeitos introduzidos ao seguir TDD.
+
+### Q3 – Esforço e produtividade
+
+- Analisar tempo total gasto para implementar cada endpoint, número de commits, tamanho do código produzido.
+- Comparar a produtividade normalizada (ex.: tempo por caso de borda atendido).
+- Responder se TDD aumenta tempo inicial, mas reduz retrabalho, ou se o esforço geral é maior/menor.
+
+### Q4 – Robustez e completude de casos de borda
+
+- Avaliar quantos casos de borda da matriz foram corretamente cobertos por cada abordagem.
+- Verificar proporção de falhas críticas por tratamento.
+- Relacionar com métricas de cobertura e com falhas encontradas durante testes complementares.
+
+### Triangulação geral
+
+- Cruzar resultados quantitativos com percepções qualitativas (esforço percebido, confiança e clareza).
+- Observações sobre dificuldades específicas também serão usadas para interpretar anomalias nos dados.
+
+O objetivo final é construir um conjunto coerente de evidências para suportar (ou rejeitar) as hipóteses sobre os efeitos de TDD na API de Gestão de Limites Financeiros.
+
+## 12.2 Métodos estatísticos planejados
+
+O plano estatístico dependerá do tamanho da amostra:
+
+### Cenário A — Amostra muito pequena / 1 participante (TCC realista)
+
+- Análise descritiva estruturada: médias, medianas, boxplots, gráficos temporais, radar charts.
+- Comparações par-a-par dentro do próprio sujeito:
+  - Diferença absoluta e percentual entre tratamentos.
+  - Efeito simples de magnitude (Cohen’s d adaptado para n pequeno).
+- Interpretação baseada em lógica de diferenças sistemáticas, não em significância estatística formal.
+
+### Cenário B — Amostra moderada/maior (replicações futuras com 12–24 participantes)
+
+Caso seja replicado futuramente:
+
+Testes paramétricos (se dados forem aproximadamente normais):
+- t-test pareado (within-subject) para comparar TDD vs. Tradicional.
+- ANOVA de medidas repetidas se houver mais de dois endpoints/tarefas.
+- Testes não paramétricos (caso n pequeno ou distribuição não-normal):
+- Wilcoxon signed-rank (within-subject).
+- Mann–Whitney U (entre grupos, se houver grupo A/B).
+
+Correlação:
+
+- Spearman para relacionar métricas (ex.: cobertura × falhas).
+
+Análise de efeito:
+
+- Cohen’s d (tamanho do efeito).
+- Cliff's Delta (para dados não paramétricos).
+
+### Visualizações planejadas
+
+- Boxplots por tratamento;
+- Gráficos de barras para cobertura;
+- Scatter plots para relação entre esforço e defeitos;
+- Heatmaps mostrando acertos/falhas nos casos de borda.
+
+## 12.3 Tratamento de dados faltantes e outliers
+
+### Dados faltantes
+
+Se ocorrerem dados ausentes:
+
+1. Verificar causa: falha técnica, não preenchimento, perda de log.
+2. Regra geral:
+
+- Não imputar valores artificiais em métricas principais (cobertura, falhas, tempo).
+- Se o dado faltar por falha técnica não recuperável, registrar explicitamente como “missing-technical”.
+- Se faltar porque a tarefa não foi concluída, registrar como “missing-not-performed” e excluir da análise quantitativa, mantendo somente qualitativa.
+
+3. Para questionários Likert ausentes: Excluir o item faltante da análise, manter o restante.
+
+### Outliers
+
+Outliers serão identificados usando:
+
+  - Regra de IQR (1.5×IQR);
+  - Z-score > 3, se aplicável.
+
+- Outliers não serão removidos automaticamente; a regra é:
+  - Manter, a menos que exista justificativa técnica clara (ex.: erro de medição, log corrompido).
+- Se removido, será documentado com justificativa explícita no relatório.
+
+### 12.4 Plano de análise para dados qualitativos
+
+Dados qualitativos previstos:
+
+- Comentários abertos no questionário pós-experimento;
+- Observações registradas pelo executor (diário de bordo);
+- Comentários em commits Git;
+- Anotações do piloto;
+- Observações sobre falhas e dificuldades percebidas.
+
+### Técnica de análise planejada: Análise de Conteúdo Temática
+
+1. Leitura aberta de todas as respostas e notas.
+2. Codificação inicial: marcar trechos relacionados a temas como:
+  - dificuldade percebida,
+  - clareza dos requisitos,
+  - percepção de esforço,
+  - percepção de qualidade,
+  - frustração,
+  - fluidez do TDD,
+  - vantagem percebida.
+
+3. Agrupamento em categorias temáticas (ex.: “Esforço Percebido”, “Confiabilidade”, “Complexidade do Domínio”).
+4. Matriz de apoio cruzando temas e tratamentos (TDD vs. Tradicional).
+5. Interpretação relacionando temas qualitativos às métricas quantitativas.
+  - Ex.: maior tempo em TDD → comentários sobre dificuldade;
+  - Menos falhas → percepção de “confiança maior nos testes”.
+
+### Resultado esperado da análise qualitativa
+
+- Complementar as análises numéricas;
+- Ajudar a interpretar efeitos onde métricas são inconclusivas;
+- Destacar padrões comportamentais ou dificuldades que expliquem variações.
