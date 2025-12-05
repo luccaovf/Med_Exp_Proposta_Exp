@@ -18,12 +18,14 @@ EXP-TDD-REST-EDGECases-2025
 | v1.1   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Atualização do GQM |
 | v2.0   | 24/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 4 - 6 |
 | v3.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 7 - 9 |
-| v4.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 10 - 12 |
+| v4.0   | 01/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 10 - 12 |
+| v4.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Revisão do tamanaho do estudo |
+
 
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 01/12/2025
+- Última atualização: 05/12/2025
 
 ## 1.5 Autores
 
@@ -60,23 +62,20 @@ Esses defeitos não são triviais e geralmente só são percebidos tarde. A hip�
 
 ## 2.2 Contexto Organizacional e Técnico
 
-**Equipe**: 1 executor (aluno)
+Este experimento será conduzido em um contexto acadêmico, com 12 a 24 estudantes de cursos de Engenharia de Software ou áreas correlatas, atuando como participantes no papel de desenvolvedores.
 
-**Sistema**: API REST protótipo contendo 1–3 endpoints com regras de validação com limites bem definidos (ex.: cadastro de usuário, pedido, agendamento etc.)
+Esses participantes possuem formação heterogênea, variando entre iniciantes e intermediários, refletindo um perfil próximo ao de desenvolvedores iniciantes em cenários profissionais. O experimento será realizado em ambiente controlado de laboratório ou remoto, utilizando ferramentas gratuitas:
 
-**Ferramentas gratuitas**:
+- Controle de versão: Git e GitHub
+- Desenvolvimento: VS Code, IntelliJ Community ou outra IDE gratuita
+- Testes: JUnit ou Pytest ou Jest
+- Execução de API: Spring Boot, Express ou Django REST (à escolha da coordenação)
+- Testes funcionais: Postman ou Newman
+- Duas equipes (ou grupos) serão formadas para investigação experimental:
+- Grupo TDD (Tratamento): 6 a 12 participantes
+- Grupo Desenvolvimento Tradicional (Controle): 6 a 12 participantes
 
-- Java + Spring Boot
-- PostgreSQL (opcional — pode ser substituído por H2)
-- JUnit 5, Mockito, AssertJ
-- JaCoCo (cobertura)
-- Git + GitHub
-- Swagger UI / Postman
-
-**Tratamentos experimentais**:
-
-1. TDD (testes definindo casos de borda antes do código)
-2. Desenvolvimento tradicional (código primeiro; testes depois)
+Cada grupo implementará os mesmos requisitos da API de gestão de limites de transações financeiras, mas usando técnicas distintas, permitindo comparação direta entre abordagens.
 
 ## 2.3 Trabalhos e Evidências Prévias (internos e externos)
 
@@ -198,13 +197,13 @@ Implementação de uma API REST de Gestão de Limites de Transações Financeira
 
 ## 4.2 Contexto do Estudo
 
-**Tipo de organização:** Atividade acadêmica individual, sem vínculo com empresa.
+**Tipo de organização:** Atividade acadêmica com participação voluntária de alunos, sem vínculo com empresa.
 
-**Tamanho:** Projeto pequeno, desenvolvido por 1 estudante.
+**Tamanho:** Projeto médio, de 12 - 24 participantes.
 
 **Tipo de projeto:** Protótipo educacional de API REST.
 
-**Criticidade:** Baixa, sem uso comercial ou impacto externo.
+**Criticidade:** Média, sem uso comercial somente a nível de desenvolvimento acadêmico.
 
 **Perfil do participante:** Estudante de Engenharia de Software com conhecimento básico/intermediário em programação e testes.
 
@@ -213,50 +212,49 @@ Implementação de uma API REST de Gestão de Limites de Transações Financeira
 - Desenvolvimento local no computador pessoal.
 - Controle de versão via Git.
 - Execução e testes em ambiente local.
-- Duração aproximada: 4 a 8 semanas.
+- Duração aproximada: 2 a 4 semanas.
 
 ## 4.3 Premissas
 
-- O estudante possui conhecimento inicial de TDD e testes unitários.
+- Os estudantes possuem conhecimento inicial de TDD e testes unitários.
 - As ferramentas necessárias estão instaladas e funcionando.
 - O protótipo da API REST será simples o suficiente para ser implementado no tempo previsto.
 - Os casos de borda podem ser definidos claramente antes da execução do experimento.
-- O computador de desenvolvimento estará disponível durante o período do estudo.
+- Os computadores de desenvolvimento estará disponível durante o período do estudo.
 - Os limites financeiros serão representados numericamente em valor monetário (ex.: decimal).
 - Não haverá integração com sistemas reais de pagamento.
 - Não haverá mudanças radicais no escopo após o início.
 
 ## 4.4 Restrições
 
-- **Recursos humanos:** Apenas um desenvolvedor disponível.
-- **Tempo:** Agenda acadêmica limitada.
-- **Orçamento:** Zero — ferramentas devem ser gratuitas.
-- **Ambiente:** Sem servidores dedicados ou infraestrutura corporativa.
-- **Dados:** Não será usado banco de dados real; preferencialmente dados simples ou memória local.
-- **Imparcialidade:** O participante é também o executor, o que pode gerar viés.
+- A disponibilidade de participantes deve permitir divisão equilibrada entre grupos.
+- Diferenças de experiência podem introduzir variabilidade (serão medidas e controladas).
+- Tempo limitado por semestre acadêmico.
+- Apenas ferramentas gratuitas poderão ser utilizadas.
+- Comunicação entre grupos sobre técnicas utilizadas deve ser evitada para evitar contaminação experimental.
 
 ## 4.5 Limitações Previstas
 
-- Os resultados podem não generalizar para equipes profissionais.
-- O desempenho pode refletir a habilidade individual do estudante.
-- A API REST será pequena, o que pode reduzir variação de falhas.
-- Os resultados podem não representar sistemas maiores ou críticos.
-- A comparação entre TDD e não-TDD pode ser limitada por falta de múltiplos participantes.
+- Participantes são estudantes, o que pode limitar generalização para profissionais experientes.
+- Diferenças de proficiência entre grupos podem afetar desempenho.
+- O tempo disponível para treinamento em TDD pode não igualar experiência real.
+- Tarefas de protótipo podem ser menos complexas que sistemas corporativos reais.
 
 # 5. Stakeholders e Impacto Esperado
 
 ## 5.1 Stakeholders Principais
 
-- Estudante pesquisador (executor e analista).
-- Orientador acadêmico / professor.
-- Comunidade acadêmica (eventuais leitores do TCC).
-- Futuros estudantes/pesquisadores interessados em TDD.
+- Participantes do estudo (12–24 estudantes)
+- Professor/orientador do TCC
+- Faculdade/curso de Engenharia de Software
+- Comunidade acadêmica
+- Pesquisadores interessados em TDD
 
 ## 5.2 Interesses e Expectativas dos Stakeholders
 
 | Stakeholder           | Interesse / Expectativa                                          |
 | --------------------- | ---------------------------------------------------------------- |
-| Estudante             | Aprender, comparar e validar o impacto do TDD em casos de borda. |
+| Participantes         | Aprender práticas de desenvolvimento e ter contato com TDD.      |
 | Orientador            | Evidências claras, metodologia correta e resultados coerentes.   |
 | Comunidade acadêmica  | Contribuição para o entendimento prático do TDD.                 |
 | Futuros pesquisadores | Base para replicação, melhoria ou ampliação do estudo.           |
@@ -274,7 +272,7 @@ Implementação de uma API REST de Gestão de Limites de Transações Financeira
 ## 6.1 Riscos de Alto Nível
 
 - **Técnicos:** Ferramentas incompatíveis, falhas no ambiente local, dificuldades com frameworks de teste.
-- **Metodológicos:** Viés do participante na comparação entre métodos.
+- **Metodológicos:** Viés dos participantes na comparação entre métodos.
 - **Cronograma:** Atrasos por carga acadêmica.
 - **Escopo:** Protótipo mais complexo do que o previsto.
 - **Motivação:** Perda de engajamento ao longo do estudo.
@@ -296,10 +294,10 @@ No-Go: Se o escopo ou ferramentas não puderem ser executados conforme planejado
 O experimento deve ser adiado ou cancelado caso:
 
 - Não haja computador funcional ou ambiente configurado.
-- O participante não consiga implementar o protótipo mínimo.
+- Os participantes não consigam implementar o protótipo mínimo.
 - O cronograma acadêmico torne inviável a coleta de métricas.
 - Haja perda de dados críticos sem possibilidade de reconstrução.
-- Haja impedimento de saúde ou motivos maiores do participante.
+- Haja impedimento de saúde ou motivos maiores dos participantes durante ou brevemente anterior ao experimento.
 
 # 7. Modelo Conceitual e Hipóteses
 
@@ -347,20 +345,14 @@ Assim, o fator processo de desenvolvimento afeta diretamente as variáveis de qu
 
 ## 7.3 Nível de Significância e Considerações de Poder
 
-**Nível de significância adotado:**
-- α = 0,05
+Será adotado nível de significância α = 0,05.
 
-**Poder estatístico esperado:**
+A amostra total prevista de 12 a 24 participantes, com 6 a 12 por grupo, permite:
 
-Como o experimento possui apenas um participante e um único artefato sendo comparado, o poder estatístico será:
+- Poder estatístico estimado entre 0,60 e 0,80, dependendo da variabilidade entre participantes;
+- Detecção de efeitos de magnitude moderada (Cohen’s d ≈ 0,5–0,7);
 
-- baixo para inferências populacionais
-- adequado somente para estudo exploratório
-- válido para observação e análise descritiva, não inferencial
-
-**Portanto:**
-
-Os resultados não permitirão generalizações estatísticas, mas gerarão evidências práticas e qualitativas úteis.
+Embora a amostra não seja grande o suficiente para identificar efeitos muito pequenos, é adequada para detectar tendências significativas em métricas de qualidade e esforço.
 
 # 8. Variáveis, Fatores, Tratamentos e Objetos de Estudo
 
@@ -378,12 +370,9 @@ Os objetos analisados no experimento serão:
 
 ## 8.2 Sujeitos / Participantes
 
-**Participante único:**
-
-- Estudante de Engenharia de Software
-- Experiência básica/intermediária em desenvolvimento
-- Conhecimento introdutório de TDD
-- Responsável por implementar ambas as abordagens
+- 12 a 24 estudantes, variando entre novatos e intermediários.
+- Serão distribuídos em dois grupos de mesmo tamanho.
+- Critérios de inclusão/exclusão revisados para múltiplos participantes. Os participantes devem ter relativamente o mesmo nível de conhecimento de desenvolvimento com base em um pequeno questionário.
 
 ## 8.3 Variáveis Independentes (Fatores) e Níveis
 
@@ -405,26 +394,22 @@ F1 – Abordagem de desenvolvimento
 
 As variáveis dependentes são medidas associadas aos resultados:
 
-- Cobertura de casos de borda
-- Cobertura de código
-- Número de falhas
-- Severidade das falhas
-- Tempo de retrabalho
-- Commits de correção
-- Taxa de respostas corretas
-- Taxa de falsos positivos
-- Taxa de falsos negativos
-- Conformidade com requisitos
+1. Cobertura de testes (%)
+  - Cobertura de linhas ou ramos obtida via ferramenta automática (ex.: JaCoCo).
+2. Número de falhas detectadas
+  - Quantidade total de falhas registradas durante a execução dos testes funcionais.
+3. Esforço de retrabalho (tempo em minutos/hora)
+  - Tempo dedicado a corrigir falhas após a primeira entrega da implementação.
+4. Precisão das validações (proporção de respostas corretas)
+  - Percentual de casos de teste (principalmente borda) que retornam valores corretos.
 
 ## 8.6 Variáveis de Controle / Bloqueio
 
-- Mesmo desenvolvedor
-- Mesmo conjunto de requisitos
-- Mesma API alvo
-- Mesmo hardware e ambiente
-- Mesmo tempo total máximo
-- Mesmo framework de testes
-- Mesmo banco de dados simples
+- Requisitos: iguais para todos os participantes
+- Tecnologias utilizadas: mesmo framework, mesma linguagem
+- Tempo disponível: janela de execução igual para ambos os grupos
+- Nível de experiência: balanceado entre grupos antes da divisão
+- Treinamento prévio: mesmo treinamento para todos
 
 ## 8.7 Variáveis de Confusão Conhecidas
 
@@ -434,25 +419,23 @@ As variáveis dependentes são medidas associadas aos resultados:
 - Preferência pessoal por método
 - Ordem de implementação
 
-Para minimizar impacto, a ordem dos tratamentos será invertida em endpoints parciais, reduzindo viés de aprendizado.
+Para minimizar impacto, os participantes terão uma breve introdução a desenvolvimento.
 
 ## 8.8 Tabela — Variáveis e Descrições
 
-| Tipo         | Variável                     | Descrição                         |
-| ------------ | ---------------------------- | --------------------------------- |
-| Independente | Abordagem de desenvolvimento | Técnica aplicada (TDD vs não-TDD) |
-| Dependente   | Cobertura de casos de borda  | Percentual de bordas testadas     |
-| Dependente   | Falhas detectadas            | Número total de falhas            |
-| Dependente   | Severidade das falhas        | Criticidade média ponderada       |
-| Dependente   | Tempo de retrabalho          | Tempo gasto corrigindo            |
-| Dependente   | Commits de correção          | Quantidade de commits corretivos  |
-| Dependente   | Taxa de respostas corretas   | Proporção de respostas válidas    |
-| Dependente   | Falsos positivos             | Rejeições indevidas               |
-| Dependente   | Falsos negativos             | Aceitações indevidas              |
-| Dependente   | Conformidade com requisitos  | Percentual atendido               |
-| Controle     | Participante                 | Mantido constante                 |
-| Controle     | Requisitos                   | Iguais nos dois tratamentos       |
-| Confusão     | Aprendizado                  | Pode favorecer o segundo ciclo    |
+| Tipo             | Variável                     | Descrição                                  | Níveis / Valores               |
+| ---------------- | ---------------------------- | ------------------------------------------ | ------------------------------ |
+| **Independente** | Técnica de Desenvolvimento   | Método usado para implementar a API        | TDD / Tradicional              |
+| **Dependente**   | Cobertura de Testes          | Percentual de linhas/ramificações cobertas | 0–100%                         |
+| **Dependente**   | Falhas Detectadas            | Quantidade de falhas funcionais            | Contagem                       |
+| **Dependente**   | Esforço de Retrabalho        | Tempo gasto corrigindo defeitos            | Minutos / horas                |
+| **Dependente**   | Precisão das Validações      | Proporção de respostas corretas            | 0–1 (0–100%)                   |
+| **Controle**     | Requisitos                   | Escopo da API                              | Fixo                           |
+| **Controle**     | Experiência                  | Nivelamento prévio dos grupos              | Balanceado                     |
+| **Controle**     | Ambiente Técnico             | Ferramentas e configurações                | Padronizado                    |
+| **Controle**     | Tempo Disponível             | Janela de execução                         | Mesmo para todos               |
+| **Confusão**     | Motivação                    | Variação de empenho individual             | Monitorado                     |
+| **Confusão**     | Habilidade Técnica           | Capacidade individual                      | Medida via questionário        |
 
 ## 8.9 Tabela — Fatores, Tratamentos e Combinações
 
@@ -464,7 +447,7 @@ Para minimizar impacto, a ordem dos tratamentos será invertida em endpoints par
 
 ## 9.1 Tipo de Desenho
 
-Desenho intra-sujeito (within-subjects) completamente randomizado
+Desenho entre-grupos (Between-Subjects) completamente randomizado
 
 Justificativa:
 
@@ -476,7 +459,7 @@ Justificativa:
 
 **O que será randomizado:**
 
-Ordem de implementação de funcionalidades dentro da API
+Participantes serão distribuídos aleatoriamente com balanceamento pelo nível de experiência.
 
 **Método de randomização:**
 
@@ -486,15 +469,15 @@ Ferramenta simples como random.org, planilha ou sorteio manual
 
 Estratégias adotadas:
 
-- O participante implementará metade dos endpoints primeiro com TDD e metade primeiro sem TDD
-- Os papéis serão invertidos na segunda rodada
-- Reduz efeitos de aprendizagem e familiaridade
+- Questionário incial para ter uma faixa conhecida do conhecimento entre participantes.
+- Balanceamento por experiência (iniciante/intermediário).
+- Contrabalanço não é necessário, pois grupos são independentes.
 
 ## 9.4 Número de Grupos e Sessões
 
-**Grupos:** 1 participante, dois tratamentos
+**Grupos:** 2 grupos, um tratamento para cada
 
-**Sessões:** 2 ciclos completos de implementação
+**Sessões:** 2 ciclos completo de implementação
 
 - Ciclo A — abordagem 1
 - Ciclo B — abordagem 2
@@ -517,12 +500,12 @@ Essa população inclui estudantes avançados de engenharia de software, estagi�
 
 ## 10.2 Critérios de inclusão de sujeitos
 
-Caso o estudo seja ampliado e veja a necessidade de adicionar participantes além do próprio pesquisador. Para ser elegível como participante, o sujeito deve atender a todos os requisitos abaixo:
+ Para ser elegível como participante, o sujeito deve atender a todos os requisitos abaixo:
 
 - Ser estudante de graduação em Engenharia de Software (ou desenvolvedor júnior/pleno) com interesse em participar do estudo;
 - Ter conhecimento básico de programação backend (capacidade de implementar endpoints REST);
 - Ter conhecimento básico de testes unitários (conhecer JUnit, pytest, jest ou similar) e controle de versão (Git);
-- Disponibilidade para dedicar o período necessário (ex.: 4–8 semanas) conforme cronograma do experimento;
+- Disponibilidade para dedicar o período necessário (ex.: 2–4 semanas) conforme cronograma do experimento;
 - Aceitar os termos do experimento e assinar/aceitar um termo de consentimento.
 
 ## 10.3 Critérios de exclusão de sujeitos
@@ -535,13 +518,6 @@ Não poderão participar:
 
 ## 10.4 Tamanho da amostra planejado (por grupo)
 
-Opção primária (realista para TCC — execução individual)
-
-- Total: 1 participante (o aluno autor do TCC).
-- Justificativa: recursos e tempo limitados; desenho within-subject permite comparação direta entre TDD e não-TDD para o mesmo executor.
-
-Opção estendida (recomendado para replicação / trabalho futuro)
-
 - Total sugerido para maior validade: 12–24 participantes (cada um executando um subconjunto balanceado), dividido em:
   - Grupo A (TDD primeiro) = 6–12
   - Grupo B (Não-TDD primeiro) = 6–12
@@ -549,15 +525,13 @@ Opção estendida (recomendado para replicação / trabalho futuro)
 
 ## 10.5 Método de seleção / recrutamento
 
-Para o TCC (n=1): autor do TCC executa o experimento.
-
-Para replicação/estudo ampliado: amostragem de conveniência e convite em turmas/disciplina do curso de Engenharia de Software, listas de divulgação acadêmicas, e grupos de pesquisa. Usar formulário de inscrição (Google Forms) com triagem pelos critérios de inclusão. Se houver mais candidatos que vagas, selecionar por ordem de inscrição mantendo equilíbrio de experiência.
+Amostragem de conveniência e convite em turmas/disciplina do curso de Engenharia de Software, listas de divulgação acadêmicas, e grupos de pesquisa. Usar formulário de inscrição (Google Forms) com triagem pelos critérios de inclusão. Se houver mais candidatos que vagas, selecionar por ordem de inscrição mantendo equilíbrio de experiência.
 
 ## 10.6 Treinamento e preparação dos sujeitos
 
 Para nivelar conhecimento e reduzir viés por falta de habilidade:
 
-- Sessão de treinamento (presencial ou gravada — ≈4 horas):
+- Sessão de treinamento (presencial ou gravada — 3 horas):
   - Introdução ao objetivo do experimento e à API de Gestão de Limites (endpoints, requisitos).
   - Breve revisão prática de TDD (ex.: ciclo Red-Green-Refactor com JUnit).
   - Guia rápido de uso das ferramentas: Git, execução de testes, geração de relatório JaCoCo, uso do template de time tracking.
@@ -704,20 +678,6 @@ A estratégia geral é a seguinte:
 O objetivo final é construir um conjunto coerente de evidências para suportar (ou rejeitar) as hipóteses sobre os efeitos de TDD na API de Gestão de Limites Financeiros.
 
 ## 12.2 Métodos estatísticos planejados
-
-O plano estatístico dependerá do tamanho da amostra:
-
-### Cenário A — Amostra muito pequena / 1 participante (TCC realista)
-
-- Análise descritiva estruturada: médias, medianas, boxplots, gráficos temporais, radar charts.
-- Comparações par-a-par dentro do próprio sujeito:
-  - Diferença absoluta e percentual entre tratamentos.
-  - Efeito simples de magnitude (Cohen’s d adaptado para n pequeno).
-- Interpretação baseada em lógica de diferenças sistemáticas, não em significância estatística formal.
-
-### Cenário B — Amostra moderada/maior (replicações futuras com 12–24 participantes)
-
-Caso seja replicado futuramente:
 
 Testes paramétricos (se dados forem aproximadamente normais):
 - t-test pareado (within-subject) para comparar TDD vs. Tradicional.
