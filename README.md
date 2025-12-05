@@ -20,6 +20,8 @@ EXP-TDD-REST-EDGECases-2025
 | v3.0   | 26/11/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 7 - 9 |
 | v4.0   | 01/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 10 - 12 |
 | v4.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Revisão do tamanaho do estudo |
+| v5.0   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seção 13 |
+
 
 
 ## 1.4 Datas
@@ -761,3 +763,88 @@ Dados qualitativos previstos:
 - Complementar as análises numéricas;
 - Ajudar a interpretar efeitos onde métricas são inconclusivas;
 - Destacar padrões comportamentais ou dificuldades que expliquem variações.
+
+# 13. Avaliação de validade (ameaças e mitigação)
+## 13.1 Validade de conclusão
+
+**Possíveis ameaças**
+
+- Baixo poder estatístico: número insuficiente de participantes pode impedir que diferenças reais entre TDD e o método comparativo sejam detectadas.
+- Violação de pressupostos estatísticos: distribuição não normal dos dados pode inviabilizar o uso de testes paramétricos.
+- Erros de medida: inconsistências no registro automático da cobertura, contagem de defeitos ou tempo de desenvolvimento.
+- Variabilidade entre participantes: níveis diferentes de experiência podem introduzir ruído nos resultados.
+
+**Mitigações planejadas**
+
+- Amostra adequada: estimar tamanho da amostra usando power analysis prévio (ex.: G*Power).
+- Uso de testes não paramétricos quando necessário (Mann-Whitney, Wilcoxon), caso pressupostos não sejam atendidos.
+- Automação da coleta: uso de ferramentas como SonarQube, Jest/Coverage, Postman/Newman, logs do Git e contadores automáticos de falhas nos testes.
+- Estratificação ou coleta prévia de perfil para controlar variação de experiência entre participantes.
+- Triangulação de métricas: combinar métricas distintas para aumentar confiabilidade (ex.: defeitos + tempo + cobertura).
+
+## 13.2 Validade interna
+
+**Possíveis ameaças**
+
+- História: eventos externos ao experimento podem afetar o desempenho dos participantes (ex.: interrupções).
+- Maturação: participantes podem melhorar apenas pelo aprendizado natural ao longo do estudo.
+- Seleção: diferenças iniciais entre grupos (experiência, familiaridade com testes).
+- Difusão de tratamento: participantes de grupos diferentes trocam informações sobre as técnicas (TDD vs. não-TDD).
+- Desempenho reativo: participantes podem agir de forma diferente porque sabem que estão sendo observados.
+
+**Mitigações planejadas**
+
+- Execução controlada em laboratório ou ambiente remoto monitorado.
+- Atribuição aleatória aos grupos (random assignment).
+- Treinamento padronizado antes da atividade, garantindo nivelamento inicial
+- Instruções claras para evitar comunicação entre grupos durante a execução.
+- Padronização da tarefa (mesmo backlog, mesma API a implementar).
+- Equilíbrio da ordem (counterbalancing) caso participants executem mais de uma técnica.
+- Redução de interferências externas com janelas de tempo definidas e ambiente silencioso.
+
+13.3 Validade de constructo
+
+**Possíveis ameaças**
+
+- Ambiguidade de constructos: "qualidade do código", "produtividade" ou "defeitos" podem ser interpretados de maneiras diferentes.
+- Mono-operação: avaliar o constructo usando apenas uma métrica pode gerar distorções.
+- Mono-método: coleta baseada em apenas uma ferramenta ou técnica.
+- Efeito da expectativa do pesquisador: avaliador pode, inadvertidamente, influenciar a interpretação dos dados qualitativos.
+
+**Mitigações planejadas**
+
+- Definições operacionais claras para cada constructo (ex.: qualidade interna = cobertura + acoplamento + defeitos encontrados).
+- Uso de múltiplas métricas por constructo, reduzindo riscos de sub-representação.
+- Uso de ferramentas amplamente validadas (SonarQube, linters, cobertura).
+- Processo de revisão às cegas para dados qualitativos ou inspeções de código.
+- Relatório técnico fornecido aos participantes para garantir que todos entendam termos como "refatoração", "teste unitário", "defeito funcional".
+
+## 13.4 Validade externa
+
+**Possíveis ameaças**
+
+- Amostra não representativa: estudantes ou iniciantes podem não refletir comportamento de desenvolvedores profissionais.
+- Tarefa artificial: o desenvolvimento de uma API REST curta pode não representar a complexidade de sistemas reais.
+- Ambiente controlado diferente do mundo real: prazos artificialmente reduzidos, ausência de pressão do cliente.
+- Ferramentas selecionadas podem não refletir práticas industriais (ex.: uso de frameworks educacionais).
+
+**Mitigações planejadas**
+
+- Escolha de um domínio realista: ex.: API REST de Sistema de Pedidos de Restaurante com endpoints realistas (pedidos, mesas, itens, pagamentos).
+- Tarefa próxima de cenários reais, incluindo lógica de negócio (cálculo de total, status de pedido, tempo de preparo).
+- Documentação da tecnologia adotada (Node.js, Spring, Django, etc.) e justificativa baseada no uso no mercado.
+- Comparação com estudos anteriores, aumentando validade ecológica.
+- Descrever claramente o contexto experimental para permitir replicações por outros pesquisadores.
+
+## 13.5 Resumo das principais ameaças e estratégias de mitigação
+
+| Categoria de Validade | Ameaça Principal                  | Estratégia de Mitigação                                                |
+| --------------------- | --------------------------------- | ---------------------------------------------------------------------- |
+| **Conclusão**         | Baixo poder estatístico           | Power analysis + tamanho de amostra adequado + testes não paramétricos |
+| **Conclusão**         | Variabilidade entre participantes | Coleta de perfil e estratificação                                      |
+| **Interna**           | Diferenças entre grupos           | Random assignment + treinamento inicial                                |
+| **Interna**           | Comunicação entre grupos          | Execução controlada / isolamento durante tarefas                       |
+| **Constructo**        | Definições vagas de métricas      | Definições operacionais explícitas + múltiplas métricas                |
+| **Constructo**        | Uso de uma única métrica          | Triangulação (defeitos + cobertura + complexidade)                     |
+| **Externa**           | Amostra acadêmica                 | Descrever limitações e contextualizar resultados                       |
+| **Externa**           | Tarefas pouco realistas           | Uso de API inspirada em sistema real (restaurante)                     |
