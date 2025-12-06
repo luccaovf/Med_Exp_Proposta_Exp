@@ -21,6 +21,8 @@ EXP-TDD-REST-EDGECases-2025
 | v4.0   | 01/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 10 - 12 |
 | v4.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Revisão do tamanaho do estudo |
 | v5.0   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seção 13 |
+| v5.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Reescrita seção 13 |
+
 
 
 
@@ -767,22 +769,25 @@ Dados qualitativos previstos:
 # 13. Avaliação de validade (ameaças e mitigação)
 ## 13.1 Validade de conclusão
 
+A validade interna diz respeito à certeza de que diferenças observadas entre grupos são causadas pela técnica (TDD) e não por outros fatores.
+
 **Possíveis ameaças**
 
-- Baixo poder estatístico: número insuficiente de participantes pode impedir que diferenças reais entre TDD e o método comparativo sejam detectadas.
-- Violação de pressupostos estatísticos: distribuição não normal dos dados pode inviabilizar o uso de testes paramétricos.
-- Erros de medida: inconsistências no registro automático da cobertura, contagem de defeitos ou tempo de desenvolvimento.
-- Variabilidade entre participantes: níveis diferentes de experiência podem introduzir ruído nos resultados.
+- Amostra relativamente pequena (12–24 participantes), reduzindo poder estatístico.
+- Violação de pressupostos estatísticos (normalidade, homocedasticidade).
+- Erro de medida nas variáveis dependentes, especialmente tempo de retrabalho.
+- Alta variabilidade entre participantes, afetando a detecção de efeitos reais.
 
 **Mitigações planejadas**
 
-- Amostra adequada: estimar tamanho da amostra usando power analysis prévio (ex.: G*Power).
-- Uso de testes não paramétricos quando necessário (Mann-Whitney, Wilcoxon), caso pressupostos não sejam atendidos.
-- Automação da coleta: uso de ferramentas como SonarQube, Jest/Coverage, Postman/Newman, logs do Git e contadores automáticos de falhas nos testes.
-- Estratificação ou coleta prévia de perfil para controlar variação de experiência entre participantes.
-- Triangulação de métricas: combinar métricas distintas para aumentar confiabilidade (ex.: defeitos + tempo + cobertura).
+- Uso de testes não paramétricos sempre que necessário.
+- Coleta padronizada de métricas (scripts, logs e ferramentas automáticas).
+- Balanceamento prévio dos grupos por nível de experiência.
+- Reportar tamanhos de efeito (Cohen’s d, Cliff’s Delta) além de p-valor.
 
 ## 13.2 Validade interna
+
+A validade interna diz respeito à certeza de que diferenças observadas entre grupos são causadas pela técnica (TDD) e não por outros fatores.
 
 **Possíveis ameaças**
 
@@ -802,49 +807,46 @@ Dados qualitativos previstos:
 - Equilíbrio da ordem (counterbalancing) caso participants executem mais de uma técnica.
 - Redução de interferências externas com janelas de tempo definidas e ambiente silencioso.
 
-13.3 Validade de constructo
+## 13.3 Validade de constructo
 
 **Possíveis ameaças**
 
-- Ambiguidade de constructos: "qualidade do código", "produtividade" ou "defeitos" podem ser interpretados de maneiras diferentes.
-- Mono-operação: avaliar o constructo usando apenas uma métrica pode gerar distorções.
-- Mono-método: coleta baseada em apenas uma ferramenta ou técnica.
-- Efeito da expectativa do pesquisador: avaliador pode, inadvertidamente, influenciar a interpretação dos dados qualitativos.
+- Cobertura de testes como substituto imperfeito de qualidade real.
+- Precisão das validações pode depender de interpretação dos requisitos, não da técnica usada.
+- Retrabalho medido em tempo, sujeito a pequenas variações individuais.
+- Número de falhas depende da qualidade dos testes funcionais utilizados, que podem não ser exaustivos.
 
 **Mitigações planejadas**
 
-- Definições operacionais claras para cada constructo (ex.: qualidade interna = cobertura + acoplamento + defeitos encontrados).
-- Uso de múltiplas métricas por constructo, reduzindo riscos de sub-representação.
-- Uso de ferramentas amplamente validadas (SonarQube, linters, cobertura).
-- Processo de revisão às cegas para dados qualitativos ou inspeções de código.
-- Relatório técnico fornecido aos participantes para garantir que todos entendam termos como "refatoração", "teste unitário", "defeito funcional".
+- Usar múltiplas medidas de qualidade (falhas + precisão + cobertura).
+- Requisitos documentados de forma clara e exemplos fornecidos.
+- Uso de testes funcionais padronizados, validados e idênticos para ambos os grupos.
+- Coleta de retrabalho via logs automáticos, evitando autodeclaração.
 
 ## 13.4 Validade externa
 
+Refere-se à capacidade de generalizar os resultados para outros contextos além do experimento.
+
 **Possíveis ameaças**
 
-- Amostra não representativa: estudantes ou iniciantes podem não refletir comportamento de desenvolvedores profissionais.
-- Tarefa artificial: o desenvolvimento de uma API REST curta pode não representar a complexidade de sistemas reais.
-- Ambiente controlado diferente do mundo real: prazos artificialmente reduzidos, ausência de pressão do cliente.
-- Ferramentas selecionadas podem não refletir práticas industriais (ex.: uso de frameworks educacionais).
+- Participantes são estudantes, não desenvolvedores profissionais.
+- Tarefas mais simples do que sistemas reais, limitando extrapolação.
+- Ambiente acadêmico controlado, sem pressões de mercado.
+- Baixa diversidade de domínios (apenas API financeira).
 
 **Mitigações planejadas**
 
-- Escolha de um domínio realista: ex.: API REST de Sistema de Pedidos de Restaurante com endpoints realistas (pedidos, mesas, itens, pagamentos).
-- Tarefa próxima de cenários reais, incluindo lógica de negócio (cálculo de total, status de pedido, tempo de preparo).
-- Documentação da tecnologia adotada (Node.js, Spring, Django, etc.) e justificativa baseada no uso no mercado.
-- Comparação com estudos anteriores, aumentando validade ecológica.
-- Descrever claramente o contexto experimental para permitir replicações por outros pesquisadores.
+- Descrever detalhadamente o contexto para permitir replicações.
+- Usar uma API com características próximas às reais (validações complexas).
+- Comparar resultados com literatura existente com profissionais.
+- Discutir limitações explicitamente no TCC para orientar generalização adequada.
 
 ## 13.5 Resumo das principais ameaças e estratégias de mitigação
 
-| Categoria de Validade | Ameaça Principal                  | Estratégia de Mitigação                                                |
-| --------------------- | --------------------------------- | ---------------------------------------------------------------------- |
-| **Conclusão**         | Baixo poder estatístico           | Power analysis + tamanho de amostra adequado + testes não paramétricos |
-| **Conclusão**         | Variabilidade entre participantes | Coleta de perfil e estratificação                                      |
-| **Interna**           | Diferenças entre grupos           | Random assignment + treinamento inicial                                |
-| **Interna**           | Comunicação entre grupos          | Execução controlada / isolamento durante tarefas                       |
-| **Constructo**        | Definições vagas de métricas      | Definições operacionais explícitas + múltiplas métricas                |
-| **Constructo**        | Uso de uma única métrica          | Triangulação (defeitos + cobertura + complexidade)                     |
-| **Externa**           | Amostra acadêmica                 | Descrever limitações e contextualizar resultados                       |
-| **Externa**           | Tarefas pouco realistas           | Uso de API inspirada em sistema real (restaurante)                     |
+| Validade       | Ameaças mais relevantes                                    | Mitigação                                                             |
+| -------------- | ---------------------------------------------------------- | --------------------------------------------------------------------- |
+| **Conclusão**  | Amostra pequena; variabilidade; erro de medida             | Testes não paramétricos; padronização; tamanhos de efeito             |
+| **Interna**    | Diferença de habilidade; contaminação; ambiente inconsist. | Balanceamento; sessões separadas; checklist técnico                   |
+| **Constructo** | Medidas imperfeitas; interpretação dos requisitos          | Múltiplas métricas; requisitos claros; testes funcionais padronizados |
+| **Externa**    | Participantes estudantes; tarefas simples                  | Descrição detalhada; API próxima do real; comparação com literatura   |
+
