@@ -22,6 +22,7 @@ EXP-TDD-REST-EDGECases-2025
 | v4.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Revisão do tamanaho do estudo |
 | v5.0   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seção 13 |
 | v5.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Reescrita seção 13 |
+| v6.0   | 12/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 14 - 20 |
 
 
 
@@ -29,7 +30,7 @@ EXP-TDD-REST-EDGECases-2025
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 05/12/2025
+- Última atualização: 12/12/2025
 
 ## 1.5 Autores
 
@@ -850,3 +851,327 @@ Refere-se à capacidade de generalizar os resultados para outros contextos além
 | **Constructo** | Medidas imperfeitas; interpretação dos requisitos          | Múltiplas métricas; requisitos claros; testes funcionais padronizados |
 | **Externa**    | Participantes estudantes; tarefas simples                  | Descrição detalhada; API próxima do real; comparação com literatura   |
 
+# 14. Ética, Privacidade e Conformidade
+## 14.1 Questões éticas (uso de sujeitos, incentivos, etc.)
+
+O experimento envolve a participação de estudantes, o que requer atenção a possíveis questões éticas, tais como:
+
+- Pressão para participar: estudantes podem sentir obrigação de participar caso a atividade seja aplicada em um ambiente educacional. Para mitigar esse problema, participação totalmente voluntária, sem impacto em notas, avaliações ou responsabilidades acadêmicas.
+- Risco mínimo: as tarefas do experimento não envolvem risco físico, mas podem gerar ansiedade ou desconforto caso os participantes sintam desempenho inferior ao esperado. Como solução, reforço de que os resultados individuais serão anonimizados e não avaliativos.
+- Incentivos e benefícios: incentivos simbólicos (ex.: certificado de participação) podem ser oferecidos, mas nenhum incentivo financeiro será utilizado para evitar viés ou coação.
+- Uso de estudantes como sujeitos de pesquisa: há debate na literatura sobre sua representatividade. Sendo assim, transparência com os participantes sobre os objetivos e limitações do estudo, além de clara comunicação sobre sua liberdade de desistir.
+- Exposição indevida de desempenho individual: resultados podem revelar níveis de habilidade. Logo, haverá a remoção de identificadores pessoais durante análise e apresentação dos resultados.
+
+## 14.2 Consentimento informado
+
+Todos os participantes receberão um Termo de Consentimento Livre e Esclarecido (TCLE) contendo:
+
+- objetivo geral do experimento;
+- descrição das atividades que serão executadas, duração prevista e ferramentas utilizadas;
+- riscos potenciais (ex.: desconforto, carga cognitiva);
+- benefícios indiretos (aprendizado sobre TDD, experiência prática em experimentos);
+- esclarecimento de que a participação é voluntária e pode ser interrompida a qualquer momento;
+- informações sobre uso, armazenamento e descarte dos dados;
+- contato do responsável pelo estudo para dúvidas.
+
+O consentimento será registrado por meio de assinatura física ou digital antes do início das atividades.
+
+## 14.3 Privacidade e proteção de dados
+
+Os seguintes tipos de dados serão coletados:
+
+- informações de perfil (nível de experiência, familiaridade com testes);
+- artefatos produzidos (código, testes, commits, logs);
+- métricas automáticas (cobertura, falhas, tempo de retrabalho);
+- respostas de questionários pós-atividade.
+
+Medidas de proteção:
+
+- Anonimização: cada participante receberá um identificador (P01, P02...).
+- Separação de dados sensíveis: qualquer dado pessoal será armazenado separado das métricas.
+- Controle de acesso: somente o pesquisador principal terá acesso à base completa.
+- Criptografia e armazenamento seguro: arquivos hospedados em repositório privado ou armazenamento institucional protegido.
+- Tempo de guarda: dados serão mantidos por até 12 meses após conclusão do estudo, sendo posteriormente excluídos.
+- Nenhuma informação pessoal será divulgada em relatórios, artigos, apresentações ou TCC.
+
+## 14.4 Aprovações necessárias
+
+Dependendo das normas da instituição, o experimento pode exigir aprovações de:
+
+- Comitê de Ética em Pesquisa (CEP): necessário se os participantes forem estudantes identificáveis e se houver coleta de dados pessoais.
+- Professor orientador / coordenação do curso: aprovação obrigatória para realização em ambiente acadêmico.
+- DPO (Encarregado de Proteção de Dados) da instituição: caso o experimento envolva coleta de dados pessoais conforme LGPD.
+
+# 15. Recursos, Infraestrutura e Orçamento
+## 15.1 Recursos humanos e papéis
+
+Os papéis previstos no experimento são:
+
+| Papel                                 | Responsabilidades                                                                     |
+| ------------------------------------- | ------------------------------------------------------------------------------------- |
+| **Pesquisador Principal (estudante)** | Planejamento, execução do experimento, coleta e análise dos dados, elaboração do TCC. |
+| **Orientador**                        | Revisão metodológica, validação do desenho experimental, supervisão ética.            |
+| **Apoio técnico (opcional)**          | Auxílio na configuração de ambiente ou suporte aos participantes durante a execução.  |
+| **Participantes**                     | Execução das tarefas conforme tratamento atribuído e preenchimento de questionários.  |
+
+## 15.2 Infraestrutura técnica necessária
+
+Para execução do experimento, serão necessários:
+
+- Ambientes de desenvolvimento individuais (VS Code, IntelliJ ou similar);
+- Linguagem e framework do projeto (ex.: Java + Spring Boot);
+- Ferramentas de teste (JUnit, Mockito);
+- Ferramenta de cobertura de testes (JaCoCo ou equivalente);
+- Repositório Git privado (GitHub, GitLab ou Bitbucket—versões gratuitas são adequadas);
+- Scripts de coleta automática de logs e métricas;
+- Ambiente padronizado para execução dos testes funcionais (Docker, Postman CLI ou Newman).
+
+Toda a infraestrutura pode ser montada utilizando ferramentas gratuitas, adequadas ao contexto acadêmico.
+
+## 15.3 Materiais e insumos
+
+- Materiais necessários ao experimento incluem:
+- Computadores pessoais ou laboratórios da instituição, todos com suporte à linguagem escolhida;
+- Acesso à internet para uso de repositórios Git;
+- Slides explicativos e guias para TDD, execução de testes e uso das ferramentas;
+- Formulários digitais (Google Forms ou equivalentes) para consentimento e questionários;
+- Documentação da API e requisitos funcionais padronizados em PDF;
+- Scripts de validação e testes funcionais.
+
+Não há necessidade de equipamento especializado ou licenças pagas.
+
+## 15.4 Orçamento e custos estimados
+
+O experimento foi planejado para custo zero ou custo mínimo, considerando o cenário acadêmico e uso de ferramentas gratuitas.
+Entretanto, pequenos custos indiretos podem existir:
+
+| Item                                       | Custo estimado                       |
+| ------------------------------------------ | ------------------------------------ |
+| Ferramentas de software                    | R$ 0 (todas gratuitas)               |
+| Infraestrutura de laboratório              | R$ 0 (ofertado pela instituição)     |
+| Impressão de documentos ou termos          | R$ 5–20                              |
+| Certificados de participação (digitais)    | R$ 0                                 |
+| Horas de trabalho do pesquisador           | Não monetizadas (trabalho acadêmico) |
+
+Recursos próprios do estudante e infraestrutura da instituição de ensino.
+
+# 16. Cronograma, Marcos e Riscos Operacionais
+## 16.1 Macrocronograma (até o início da execução)
+
+O cronograma abaixo apresenta uma visão realista das etapas necessárias desde a finalização do plano experimental até o início da coleta de dados.
+
+| Etapa / Marco                                                 | Descrição                                                                            | Período Estimado |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ---------------- |
+| **M1 — Finalização do plano do experimento**                  | Ajustes finais no documento, revisão metodológica e validação com orientador         | Semana 1         |
+| **M2 — Submissão ao comitê de ética**                         | Envio do protocolo e dos materiais (TCLE, documentos, cronograma)                    | Semana 2         |
+| **M3 — Aprovação ética**                                      | Análise pelo comitê e retorno com ajustes (se necessário)                            | Semanas 3–5      |
+| **M4 — Preparação técnica**                                   | Configuração do ambiente, repositórios, scripts e testes funcionais                  | Semanas 4–6      |
+| **M5 — Desenvolvimento e revisão do material de treinamento** | Slides, guias de execução, checklists                                                | Semanas 5–6      |
+| **M6 — Rodada piloto**                                        | Execução reduzida com 2–3 participantes para validar tempo, instruções e ferramentas | Semana 7         |
+| **M7 — Ajustes pós-piloto**                                   | Revisão de materiais e ferramentas com base em eventuais problemas identificados     | Semana 8         |
+| **M8 — Início oficial da operação (coleta de dados)**         | Execução com os grupos TDD e Tradicional                                             | Semana 9         |
+
+## 16.2 Dependências entre atividades
+
+O andamento das atividades depende de uma sequência lógica que evita riscos de atrasos e falhas operacionais:
+
+- Treinamento dos participantes depende da aprovação ética e da aprovação do orientador.
+- Execução do piloto depende da preparação do ambiente técnico (repositórios, testes funcionais, scripts).
+- Ajustes pós-piloto dependem da realização do piloto, pois só após essa etapa problemas de clareza, tempo e ferramentas são identificados.
+- A execução oficial depende da conclusão de todas as atividades anteriores, especialmente aprovação ética e o piloto validado.
+- Análise dos dados depende da finalização da coleta, incluindo verificação de integridade dos artefatos.
+
+## 16.3 Riscos operacionais e plano de contingência
+
+| Risco                                     | Descrição                                             | Prob. | Impacto | Contingência                                                          |
+| ----------------------------------------- | ----------------------------------------------------- | ----- | ------- | --------------------------------------------------------------------- |
+| **Indisponibilidade de participantes**    | Número de participantes abaixo do mínimo necessário   | Média | Alto    | Convites adicionais; ampliar turma; permitir participação remota      |
+| **Atraso na aprovação ética**             | Comitê solicita revisões extensas                     | Média | Médio   | Submissão antecipada; responder rapidamente às demandas               |
+| **Falhas técnicas no ambiente**           | Problemas com repositórios, IDEs ou scripts de coleta | Baixa | Alto    | Repetição do piloto; criação de ambientes espelhados de backup        |
+| **Interferência no cronograma acadêmico** | Provas, eventos ou feriados impactam disponibilidade  | Alta  | Médio   | Ajustar datas; dividir execução em turnos flexíveis                   |
+| **Contaminação entre grupos**             | Participantes compartilham soluções                   | Média | Médio   | Sessões separadas + reforço ético + monitoramento durante execução    |
+| **Perda de dados ou logs incompletos**    | Falha de coleta automática                            | Baixa | Alto    | Verificação manual pós-sessão; backup secundário com coleta duplicada |
+
+# 17. Governança do Experimento
+## 17.1 Papéis e responsabilidades formais
+
+A tabela abaixo define os papéis, responsabilidades e nível de autoridade conforme modelo RACI (Responsible, Accountable, Consulted, Informed).
+
+| Papel                                 | Responsável (R)                          | Aprovador (A)            | Consultado (C)        | Informado (I)        |
+| ------------------------------------- | ---------------------------------------- | ------------------------ | --------------------- | -------------------- |
+| **Pesquisador Principal (estudante)** | Planejamento, execução, coleta e análise | —                        | Orientador            | Participantes        |
+| **Orientador**                        | Suporte metodológico                     | Aprovação final do plano | Comitê de ética       | Coordenação do curso |
+| **Comitê de Ética**                   | Revisão ética                            | Aprovação ética          | —                     | Instituição          |
+| **Participantes**                     | Execução das tarefas                     | —                        | —                     | —                    |
+| **Apoio técnico (opcional)**          | Suporte em ferramentas e ambiente        | —                        | Pesquisador Principal | —                    |
+
+## 17.2 Ritos de acompanhamento pré-execução
+
+Antes da fase operacional, serão adotados os seguintes ritos de acompanhamento:
+
+- Reunião quinzenal com orientador
+  - Revisão do cronograma
+  - Ajustes metodológicos
+  - Avaliação de riscos emergentes
+- Checkpoints técnicos semanais
+  - Verificação de scripts, repositórios, documentação
+  - Teste contínuo do ambiente
+- Revisão final pré-piloto
+  - Simulação completa do fluxo
+  - Conferência de checklists
+  - Ajustes pontuais antes do piloto
+- Revisão pós-piloto
+  - Levantamento de falhas no fluxo
+  - Identificação de inconsistências nos materiais
+  - Avaliação de durações e instruções
+
+
+## 17.3 Processo de controle de mudanças no plano
+
+Qualquer alteração no plano experimental seguirá o processo abaixo:
+
+1. Identificação da mudança
+    - Problema detectado (ex.: tempo insuficiente, ambiguidade nos requisitos, falha no ambiente).
+
+2. Registro formal
+    - Descrição da mudança, motivo, impacto estimado e responsáveis.
+    - Registro em documento de controle de versão (Markdown ou Google Docs).
+
+3. Análise de impacto
+    - Avaliação de como a mudança afeta cronograma, participantes, métricas e validade científica.
+
+4. Aprovação
+    - Mudanças metodológicas devem ser aprovadas pelo orientador.
+    - Mudanças que envolvam coleta de dados ou sujeitos devem ser reenviadas ao Comitê de Ética.
+
+5. Comunicação
+    - Participantes e demais envolvidos serão informados antes da execução.
+
+6. Implementação e registro final
+    - Atualização da versão do plano e documentação do histórico de revisões.
+
+# 18. Plano de Documentação e Reprodutibilidade
+## 18.1 Repositórios e convenções de nomeação
+
+A documentação do experimento será organizada em um conjunto de repositórios digitais que seguirão convenções padronizadas para garantir rastreabilidade, versionamento e facilidade de replicação. O repositório principal será hospedado em uma plataforma pública de controle de versão (como GitHub ou GitLab), porém definido como privado durante o período da pesquisa para evitar interferências externas.
+
+Esse repositório será dividido em três diretórios principais:
+
+- /docs – contendo o plano experimental, versões anteriores, guias e instruções.
+- /scripts – com todos os scripts utilizados para coleta, medição, validação e automação dos testes.
+- /artefacts – contendo exemplos de formulários, arquivos de configuração e materiais de apoio.
+
+A convenção de nomeação seguirá o padrão snake_case, com prefixos que indicam a finalidade do documento. Por exemplo:
+
+- ``plano_experimento_v1.md``
+- ``script_coleta_metricas.py``
+- ``checklist_ambiente_execucao.pdf``
+- ``questionario_perfil_v2.docx``
+
+Além disso, commits seguirão a estrutura “tipo: descrição” (ex.: fix: ajuste no script de cobertura ou docs: atualização do guia de TDD). Essa padronização visa manter transparência e facilitar auditorias ou reproduções futuras.
+
+## 18.2 Templates e artefatos padrão
+
+- A execução do experimento depende de um conjunto de artefatos estruturados previamente, garantindo uniformidade de coleta e consistência metodológica. Entre esses artefatos, destacam-se:
+- Template do Termo de Consentimento Livre e Esclarecido (TCLE), contendo todos os itens exigidos pelo comitê de ética.
+- Questionário de Perfil, aplicado antes da atividade para identificar nível de experiência, familiaridade com testes e conhecimento prévio de TDD.
+- Checklist de Preparação do Ambiente, assegurando que todos os participantes tenham o mesmo ponto de partida técnico.
+- Guia de Execução, contendo instruções padronizadas para cada grupo sobre como proceder durante a atividade.
+- Formulário de Avaliação Pós-Experimento, reunindo impressões subjetivas e comentários adicionais dos participantes.
+- Scripts padronizados para coleta de métricas (cobertura, falhas e tempo de retrabalho).
+
+Todos esses modelos serão armazenados no diretório /templates, acompanhados de uma breve descrição de uso.
+
+## 18.3 Plano de empacotamento para replicação futura
+
+O experimento será preparado desde a concepção para permitir replicações futuras, seja por outros estudantes, por docentes ou por equipes de pesquisa. Para isso, será criado um package de replicação, composto pelos seguintes elementos:
+
+- Descrição detalhada do experimento, com todas as seções do plano, incluindo objetivos, variáveis, desenho experimental e protocolos de execução.
+- Scripts automatizados completamente documentados, permitindo que o ambiente seja recriado de forma idêntica independentemente da máquina utilizada.
+- Conjunto de testes funcionais padronizados, garantindo que os critérios de validação sejam os mesmos em futuras execuções.
+- Requisitos estáveis da API, congelados em uma versão específica, com changelog oficial para controle.
+- Ambiente Docker opcional, reunindo em um único container todas as dependências necessárias.
+- Tutorial de replicação, explicando passo a passo como recriar o contexto, desde o download dos materiais até a análise dos dados.
+
+
+# 19. Plano de Comunicação
+## 19.1 Públicos e mensagens-chave pré-execução
+
+A comunicação do experimento será direcionada principalmente a quatro grupos: o orientador, o comitê de ética, os participantes e a coordenação do curso. Cada um deles receberá mensagens específicas e alinhadas ao seu papel no processo.
+
+O orientador deve ser atualizado sobre o progresso do planejamento, incluindo ajustes metodológicos, riscos identificados e datas previstas de execução. Já o comitê de ética receberá informações formais sobre objetivos, métodos, instrumentos e cuidados adotados com os participantes.
+
+Os participantes devem ser informados sobre o propósito do estudo, o escopo da atividade, a duração estimada, os requisitos técnicos e seus direitos, especialmente a voluntariedade. Por fim, a coordenação do curso deve ser comunicada sobre datas e alocação de infraestrutura, garantindo que o experimento não conflite com outras atividades acadêmicas.
+
+## 19.2 Canais e frequência de comunicação
+
+A comunicação ocorrerá prioritariamente por e-mail institucional, pela sua natureza formal e rastreável. No entanto, canais complementares como reuniões presenciais, Google Meet ou plataformas como Slack/Teams serão utilizados conforme a necessidade de comunicação rápida ou colaboração imediata.
+
+A frequência seguirá o seguinte padrão:
+
+- Orientador: reuniões quinzenais e e-mails semanais.
+- Participantes: comunicação inicial com 2 semanas de antecedência, seguido de lembretes pontuais antes das sessões.
+- Comitê de ética: comunicação apenas nos eventos formais (submissão, revisões e aprovação).
+Coordenação: atualizações conforme necessidade de infraestrutura ou calendário.
+
+## 19.3 Pontos de comunicação obrigatórios
+
+Alguns eventos do experimento exigem comunicação formal, registrada e acompanhada, garantindo transparência e governança adequada. Os principais pontos obrigatórios incluem:
+
+- Aprovação final do plano experimental, que deve ser comunicada ao orientador e registrada no repositório.
+- Submissão e aprovação do comitê de ética, com armazenamento de pareceres e revisões.
+- Alterações metodológicas relevantes, que precisam ser justificadas, registradas e aprovadas antes de serem implementadas.
+- Adiamentos ou cancelamentos, caso ocorram, devendo ser comunicados aos participantes com antecedência adequada.
+- Divulgação das instruções de execução, enviada formalmente para garantir que todos tenham acesso às mesmas informações.
+
+# 20. Critérios de Prontidão para Execução (Definition of Ready)
+## 20.1 Checklist de prontidão (itens que devem estar completos)
+
+A execução do experimento somente poderá começar após a verificação de que todos os requisitos essenciais foram atendidos. Esse conjunto de condições representa a Definition of Ready e assegura que o estudo será conduzido de forma ética, consistente e com mínima exposição a riscos operacionais ou metodológicos.
+
+Antes do início da operação, devem estar finalizados:
+
+1. Plano completo do experimento
+    - O documento deve estar revisado, versionado e aprovado pelo orientador. Todas as seções — objetivos, desenho, métricas, protocolo, análises e riscos — precisam estar concluídas.
+
+2. Aprovação do Comitê de Ética
+    - O parecer de aprovação ou de dispensa deve estar formalizado, com assinatura ou registro institucional. Nenhuma coleta de dados pode ocorrer sem essa etapa.
+
+3. Instrumentos de coleta finalizados
+    - Questionários, formulários, scripts de registro e extratores de métricas precisam estar testados e armazenados no repositório oficial.
+
+4. Ambiente técnico totalmente configurado
+    - Repositórios, container Docker (se houver), testes funcionais, ferramentas de cobertura e guias de execução devem estar operacionais e validados no piloto.
+
+5. Documentação e templates padronizados
+    - Checklists, guias de treinamento, arquivos de apoio e versões finais do TCLE devem estar disponibilizados no diretório apropriado.
+
+6. Participantes confirmados e instruídos
+    - O número mínimo de participantes por grupo deve estar confirmado, com disponibilidade validada e instruções prévias enviadas.
+
+7. Comunicação oficial publicada
+    - Informações de datas, horários, links, laboratório utilizado e instruções de preparação devem ter sido comunicadas a todos os envolvidos.
+
+8. Ajustes pós-piloto aplicados
+    - Qualquer inconsistência, sugestão ou problema identificado no piloto deve ter sido corrigido e registrado.
+
+9. Acesso e permissões validadas
+    - O pesquisador principal deve ter acesso pleno aos ambientes técnicos, e os participantes devem ter acesso às máquinas, ferramentas e repositórios necessários.
+
+Somente quando todos os itens acima forem atendidos o experimento será formalmente considerado “pronto para execução”.
+
+## 20.2 Aprovações finais para iniciar a operação
+
+A autorização definitiva para iniciar a coleta de dados dependerá da validação formal de três agentes institucionais:
+
+**Orientador Acadêmico**
+
+É o responsável direto por garantir que o método, o escopo e os instrumentos sejam adequados para um trabalho de conclusão de curso. O orientador deve emitir um “OK final” por escrito, seja via e-mail institucional ou anotação registrada no repositório do experimento.
+
+**Comitê de Ética em Pesquisa (CEP)**
+Caso a instituição exija aprovação ética, o aceite formal deve estar registrado no parecer emitido pelo comitê. Esse documento deve ser armazenado no repositório /docs/etica/ e anexado ao plano.
+
+**Coordenação do Curso (ou responsável equivalente)**
+A coordenação deve validar a disponibilidade de laboratórios, horários e demais recursos institucionais necessários. O aceite pode ser registrado por mensagem institucional, formulário interno ou despacho de autorização.
+
+O experimento somente poderá começar após os três registros estarem presentes, datados e anexados ao repositório oficial.
