@@ -23,6 +23,7 @@ EXP-TDD-REST-EDGECases-2025
 | v5.0   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seção 13 |
 | v5.1   | 05/12/2025 | Lucca Oliveira Vasconcelos de Faria | Reescrita seção 13 |
 | v6.0   | 12/12/2025 | Lucca Oliveira Vasconcelos de Faria | Seções 14 - 20 |
+| v6.1   | 15/12/2025 | Lucca Oliveira Vasconcelos de Faria | Diagrama e Video |
 
 
 
@@ -30,7 +31,7 @@ EXP-TDD-REST-EDGECases-2025
 ## 1.4 Datas
 
 - Criação: 23/11/2025
-- Última atualização: 12/12/2025
+- Última atualização: 15/12/2025
 
 ## 1.5 Autores
 
@@ -635,6 +636,12 @@ Executar piloto (um endpoint simples) para verificar procedimentos.
 - Se o tempo estimado para cada endpoint for muito maior/menor → ajustar cronograma e, se necessário, reduzir número de endpoints do experimento principal.
 - Se o processo de registro de tempo for difícil → simplificar a planilha.
 
+## 11.5 Diagrama Do Processo Experimental
+
+No seguinte diagrama é apresentado os passos anteriormente descritos de forma gráfica para maior compreensão da sequência operacional do experimento.
+
+![Diagrama do processo experimental](/Midia/DiagramaProcessoExperimental.png)
+
 # 12. Plano de Análise de Dados (pré-execução)
 
 ## 12.1 Estratégia geral de análise (como responderá às questões)
@@ -733,7 +740,7 @@ Outliers serão identificados usando:
   - Manter, a menos que exista justificativa técnica clara (ex.: erro de medição, log corrompido).
 - Se removido, será documentado com justificativa explícita no relatório.
 
-### 12.4 Plano de análise para dados qualitativos
+## 12.4 Plano de análise para dados qualitativos
 
 Dados qualitativos previstos:
 
@@ -808,7 +815,7 @@ A validade interna diz respeito à certeza de que diferenças observadas entre g
 - Equilíbrio da ordem (counterbalancing) caso participants executem mais de uma técnica.
 - Redução de interferências externas com janelas de tempo definidas e ambiente silencioso.
 
-## 13.3 Validade de constructo
+## 13.3 Validade de construto
 
 **Possíveis ameaças**
 
@@ -848,7 +855,7 @@ Refere-se à capacidade de generalizar os resultados para outros contextos além
 | -------------- | ---------------------------------------------------------- | --------------------------------------------------------------------- |
 | **Conclusão**  | Amostra pequena; variabilidade; erro de medida             | Testes não paramétricos; padronização; tamanhos de efeito             |
 | **Interna**    | Diferença de habilidade; contaminação; ambiente inconsist. | Balanceamento; sessões separadas; checklist técnico                   |
-| **Constructo** | Medidas imperfeitas; interpretação dos requisitos          | Múltiplas métricas; requisitos claros; testes funcionais padronizados |
+| **Construto** | Medidas imperfeitas; interpretação dos requisitos          | Múltiplas métricas; requisitos claros; testes funcionais padronizados |
 | **Externa**    | Participantes estudantes; tarefas simples                  | Descrição detalhada; API próxima do real; comparação com literatura   |
 
 # 14. Ética, Privacidade e Conformidade
